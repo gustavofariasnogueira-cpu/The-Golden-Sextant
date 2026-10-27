@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Gold Sextant • Capítulo 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#141414;
+font-family:'Cormorant Garamond',serif;
+color:#ececec;
+
+}
+
+/* Barra de progresso */
+
+#progress{
+
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:#d4af37;
+z-index:999;
+
+}
+
+/* Cabeçalho */
+
+header{
+
+padding:80px 20px 40px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+header h1{
+
+font-family:Cinzel;
+font-size:52px;
+color:#d4af37;
+
+}
+
+header h2{
+
+margin-top:15px;
+font-size:28px;
+font-weight:400;
+color:#d9d9d9;
+
+}
+
+/* Área de leitura */
+
+main{
+
+max-width:900px;
+margin:auto;
+padding:70px 35px;
+font-size:30px;
+line-height:1.9;
+
+}
+
+main p{
+
+margin-bottom:35px;
+
+}
+
+/* Primeira letra */
+
+main p:first-of-type::first-letter{
+
+font-size:90px;
+float:left;
+line-height:70px;
+padding-right:12px;
+color:#d4af37;
+font-weight:bold;
+
+}
+
+/* Navegação */
+
+.nav{
+
+display:flex;
+justify-content:space-between;
+margin-top:80px;
+
+}
+
+.nav a{
+
+text-decoration:none;
+padding:15px 35px;
+border-radius:40px;
+background:#d4af37;
+color:#111;
+font-weight:bold;
+transition:.3s;
+
+}
+
+.nav a:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* Voltar */
+
+.topo{
+
+position:fixed;
+top:20px;
+left:20px;
+
+}
+
+.topo a{
+
+text-decoration:none;
+color:#d4af37;
+font-size:18px;
+
+}
+
+footer{
+
+text-align:center;
+padding:40px;
+color:#777;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<div class="topo">
+<a href="ler-historia.html">← Lista de capítulos</a>
+</div>
+
+<header>
+
+<h1>CAPÍTULO 1</h1>
+
+<h2>A Segunda Grande Guerra</h2>
+
+</header>
+
+<main>
+
+<p>
+
+<p> -- capitulo aqui ---</p>
+
+</p>
+
+
+</p>
+
+<div class="nav">
+
+<a href="capitulo0.html">⬅ Capítulo anterior</a>
+
+<a href="capitulo2.html">Próximo capítulo ➜</a>
+
+</div>
+
+</main>
+
+<footer>
+
+The Gold Sextant © 2026
+
+</footer>
+
+<script>
+
+window.onscroll=function(){
+
+let h=document.documentElement;
+
+let sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+
+document.getElementById("progress").style.width=sc+"%";
+
+}
+
+</script>
+
+</body>
+
+</html>

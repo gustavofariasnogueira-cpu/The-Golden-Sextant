@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personagens • The Gold Sextant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #403000, #0c0c0c 30%, #050505 100%);
+    min-height: 100vh;
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fundo Estrelado */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 55px 55px;
+    opacity: .2;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.back-btn {
+    display: inline-block;
+    color: #ffd95f;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    color: #f6d365;
+    text-shadow: 0 0 15px #c7a135, 0 0 30px #9b7a20;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #d8d8d8;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.line {
+    margin: 20px auto 0;
+    width: 100px;
+    height: 2px;
+    background: #d8b44a;
+}
+
+/* Grade de Personagens */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid rgba(216, 180, 74, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ffd95f;
+    box-shadow: 0 10px 25px rgba(215, 181, 77, 0.25);
+}
+
+.card-img-container {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-container img {
+    transform: scale(1.06);
+}
+
+.card-info {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+.card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: #f6d365;
+    margin-bottom: 5px;
+}
+
+.card-role {
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Modal / Janela Pop-up */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #0f0f0f;
+    border: 1px solid #d8b44a;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(215, 181, 77, 0.3);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #ffd95f;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: white;
+}
+
+.modal-img-wrapper {
+    width: 45%;
+    min-height: 400px;
+}
+
+.modal-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.modal-details {
+    width: 55%;
+    padding: 35px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-details h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #f6d365;
+    margin-bottom: 5px;
+}
+
+.modal-details .role {
+    color: #d8b44a;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.modal-details p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    
+    .modal-img-wrapper, .modal-details {
+        width: 100%;
+    }
+
+    .modal-img-wrapper {
+        height: 300px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+    <header>
+        <a href="index.html" class="back-btn">◄ Voltar ao Menu</a>
+        <h1>PERSONAGENS</h1>
+        <div class="subtitle">Conheça as figuras que moldam o destino do mundo</div>
+        <div class="line"></div>
+    </header>
+
+    <div class="character-grid">
+
+        <!-- PERSONAGEM 1 -->
+        <div class="card" onclick="openModal('Rei Midas', 'Monarca de Ouro', 'img/midas.png', 'Lorde supremo da abundância e detentor da autoridade absoluta no reino. Midas domina o ouro divino e direciona as grandes forças do mundo.')">
+            <div class="card-img-container">
+                <img src="img/midas.png" alt="Rei Midas">
+            </div>
+            <div class="card-info">
+                <div class="card-title">Rei Midas</div>
+                <div class="card-role">Monarca de Ouro</div>
+            </div>
+        </div>
+
+        <!-- PERSONAGEM 2 -->
+        <div class="card" onclick="openModal('Sozis', 'Guerreiro Espiritual', 'img/Sozis.webp', 'Mestre nas artes marciais arcanas, capaz de transitar entre o mundo visível e as correntes espirituais em batalhas decisivas.')">
+            <div class="card-img-container">
+                <img src="img/Sozis.webp" alt="Sozis">
+            </div>
+            <div class="card-info">
+                <div class="card-title">Sozis</div>
+                <div class="card-role">Guerreiro Espiritual</div>
+            </div>
+        </div>
+
+        <!-- PERSONAGEM 3 -->
+        <div class="card" onclick="openModal('Zinge', 'Lorde do Sangue', 'img/Zinge.png', 'Mestre das lâminas e do controle elemental sob a lua de sangue. Suas habilidades letais e presenciais impressionam até os oponentes mais respeitados.')">
+            <div class="card-img-container">
+                <img src="img/Zinge.png" alt="Zinge">
+            </div>
+            <div class="card-info">
+                <div class="card-title">Zinge</div>
+                <div class="card-role">Lorde do Sangue</div>
+            </div>
+        </div>
+
+        <!-- PERSONAGEM 4 -->
+        <div class="card" onclick="openModal('Histelis', 'Dominador do Gelo', 'img/Histelis.png', 'Manipulador do elemento gélido, capaz de congelar o próprio ar ao seu redor e erguer estruturas de cristal inquebráveis.')">
+            <div class="card-img-container">
+                <img src="img/Histelis.png" alt="Histelis">
+            </div>
+            <div class="card-info">
+                <div class="card-title">Histelis</div>
+                <div class="card-role">Dominador do Gelo</div>
+            </div>
+        </div>
+
+        <!-- PERSONAGEM 5 -->
+        <div class="card" onclick="openModal('Sophia', 'Sacerdotisa da Chama', 'img/Sophia.png', 'Guardiana do fogo divino e detentora de conhecimentos ancestrais capazes de purificar ou destruir civilizações.')">
+            <div class="card-img-container">
+                <img src="img/Sophia.png" alt="Sophia">
+            </div>
+            <div class="card-info">
+                <div class="card-title">Sophia</div>
+                <div class="card-role">Sacerdotisa da Chama</div>
+            </div>
+        </div>
+
+        <!-- PERSONAGEM 6 -->
+        <div class="card" onclick="openModal('Eleissan', 'Protetor das Sombras', 'img/Eleissan.png', 'Defensor velado sob o manto da noite, detentor do conhecimento das constelações e das sombras celestes.')">
+            <div class="card-img-container">
+                <img src="img/Eleissan.png" alt="Eleissan">
+            </div>
+            <div class="card-info">
+                <div class="card-title">Eleissan</div>
+                <div class="card-role">Protetor das Sombras</div>
+            </div>
+        </div>
+
+        <!-- PERSONAGEM 7 -->
+        <div class="card" onclick="openModal('Guardião Cósmico', 'Guerreiro Titânico', 'img/ultimus.png', 'Muralha viva trajando a armadura estelar. Sua força física e resiliência são lendárias nos campos de batalha.')">
+            <div class="card-img-container">
+                <img src="img/ultimus.png" alt="Guardião">
+            </div>
+            <div class="card-info">
+                <div class="card-title">Ultimus</div>
+                <div class="card-role">Aniquilação</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- POP-UP / MODAL -->
+<div class="modal" id="charModal" onclick="closeModalOnOuterClick(event)">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-img-wrapper">
+            <img id="modalImg" src="" alt="Personagem">
+        </div>
+        <div class="modal-details">
+            <h2 id="modalName">Nome do Personagem</h2>
+            <div class="role" id="modalRole">Título ou Função</div>
+            <p id="modalDesc">Descrição detalhada sobre a história, habilidades ou personalidade do personagem no mundo de The Gold Sextant.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function openModal(name, role, imgSrc, desc) {
+    document.getElementById('modalName').innerText = name;
+    document.getElementById('modalRole').innerText = role;
+    document.getElementById('modalImg').src = imgSrc;
+    document.getElementById('modalDesc').innerText = desc;
+    
+    document.getElementById('charModal').classList.add('active');
+}
+
+function closeModal() {
+    document.getElementById('charModal').classList.remove('active');
+}
+
+function closeModalOnOuterClick(event) {
+    if (event.target.classList.contains('modal')) {
+        closeModal();
+    }
+}
+</script>
+
+</body>
+</html>
