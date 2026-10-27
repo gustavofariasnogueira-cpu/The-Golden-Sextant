@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Gold Sextant - História</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#0b0b0b;
+    color:white;
+    font-family:Poppins,sans-serif;
+
+}
+
+header{
+
+    padding:40px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,215,0,.15);
+
+}
+
+h1{
+
+    font-family:Cinzel;
+    color:#f0c550;
+    font-size:52px;
+
+}
+
+header p{
+
+    margin-top:10px;
+    color:#bbb;
+
+}
+
+.container{
+
+    max-width:1100px;
+    margin:auto;
+    padding:50px;
+
+}
+
+h2{
+
+    color:#f0c550;
+    margin-bottom:25px;
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+
+}
+
+.card{
+
+    background:#171717;
+    border:1px solid rgba(255,215,0,.1);
+    border-radius:15px;
+    padding:25px;
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+    border-color:#d7b54d;
+    box-shadow:0 0 20px rgba(255,215,0,.15);
+
+}
+
+.capitulo{
+
+    color:#f0c550;
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+}
+
+.titulo{
+
+    font-size:24px;
+    margin:12px 0;
+
+}
+
+.resumo{
+
+    color:#bdbdbd;
+    line-height:1.7;
+    margin-bottom:25px;
+
+}
+
+.botao{
+
+    display:inline-block;
+    text-decoration:none;
+    color:#111;
+    background:#f0c550;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+
+}
+
+.botao:hover{
+
+    background:white;
+
+}
+
+.voltar{
+
+    position:fixed;
+    top:25px;
+    left:25px;
+
+}
+
+.voltar a{
+
+    text-decoration:none;
+    color:#f0c550;
+
+}
+
+footer{
+
+    text-align:center;
+    padding:40px;
+    color:#777;
+
+}
+
+.music-control{
+    position:fixed;
+    top:25px;
+    right:25px;
+    z-index:1000;
+}
+
+.music-btn{
+    background:#171717;
+    color:#f0c550;
+    border:1px solid rgba(255,215,0,.25);
+    border-radius:30px;
+    padding:10px 18px;
+    font-family:Poppins,sans-serif;
+    font-size:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.music-btn:hover{
+    border-color:#d7b54d;
+    box-shadow:0 0 15px rgba(255,215,0,.15);
+    background:#1f1f1f;
+}
+
+.music-btn.playing{
+    background:#f0c550;
+    color:#111;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="music-control">
+  <audio id="bg-music" loop preload="metadata">
+    <source src="menu.mp3" type="audio/mpeg">
+  </audio>
+  <button type="button" class="music-btn" id="btn-music">🔊 Música</button>
+</div>
+
+<div class="voltar">
+<a href="index.html">← Voltar ao Menu</a>
+</div>
+
+<header>
+
+<h1>Ler História</h1>
+
+<p>Escolha um capítulo para iniciar sua jornada.</p>
+
+</header>
+
+<div class="container">
+
+<h2>Prólogo</h2>
+
+<div class="grid">
+
+<!-- INICIO CAPITULO 0 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+<h2>Alvorada</h2>
+</div>
+
+<div class="titulo">
+O Começo de Tudo
+</div>
+
+<div class="resumo">
+
+
+</div>
+
+<a class="botao" href="capitulo0.html">
+
+Ler Prólogo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 1 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 1
+</div>
+
+<div class="titulo">
+A Espada e o Lamento
+</div>
+
+<div class="resumo">
+
+Na Segunda Grande Guerra, Kairos luta por família e reino — até a Espada Primordial ferir sua filha. Desesperado, ele a sela em um sono eterno e, no Monte Hallot, encontra a Sabaris… e um propósito sangrento.
+
+</div>
+
+<a class="botao" href="capitulo1.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 2 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 2
+</div>
+
+<div class="titulo">
+O Peso das Escolhas
+</div>
+
+<div class="resumo">
+
+Em Eldoria, Kairos se recupera e confessa a Anemos o verdadeiro motivo de sua jornada. 
+Enquanto isso, um ataque se aproxima de Illium — e as escolhas de cada um começam a cobrar um preço.
+
+</div>
+
+<a class="botao" href="capitulo2.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 3 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 3
+</div>
+
+<div class="titulo">
+O Triunfo Manchado
+</div>
+
+<div class="resumo">
+
+Após o desfecho em Illium, o luto se transforma em fúria e o campo de batalha atrai forças ainda maiores. 
+Entre ódio, poder e julgamento, o preço das espadas volta a ser cobrado.
+
+</div>
+
+<a class="botao" href="capitulo3.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 4 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 4
+</div>
+
+<div class="titulo">
+Ecos Após a Queda
+</div>
+
+<div class="resumo">
+
+Após a batalha, o silêncio pesa sobre Illium e Celeste. Enquanto Anemos treina sob a sombra da culpa, 
+encontros inesperados e ameaças distantes começam a mudar o boato de todos.
+
+</div>
+
+<a class="botao" href="capitulo4.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 5 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 5
+</div>
+
+<div class="titulo">
+O Caos Que Sangra
+</div>
+
+<div class="resumo">
+
+Em Fatalnost, Kairos avança em busca de outra espada sagrada. No coração do caos, 
+forças antigas e feridas se reencontram — e cada passo o aproxima de um limite perigoso.
+
+</div>
+
+<a class="botao" href="capitulo5.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 6 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 6
+</div>
+
+<div class="titulo">
+O Gelo Contra as Trevas
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a sombra desce sobre as muralhas e o gelo se ergue em defesa. Quando a Tríade avança com THEWOS, 
+a batalha muda de Tom — e alguém inesperado chega no momento decisivo.
+
+</div>
+
+<a class="botao" href="capitulo6.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 7 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 7
+</div>
+
+<div class="titulo">
+Aquilo que Desperta
+</div>
+
+<div class="resumo">
+
+Em Celeste, Anemos e Sofhia acompanham um momento de quietude — enquanto, longe dali, 
+um jovem comum enfrenta o impossível. Algo desperta… e o mundo ainda não está pronto.
+
+</div>
+
+<a class="botao" href="capitulo7.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 8 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 8
+</div>
+
+<div class="titulo">
+Um Corpo Que Não Me Pertence
+</div>
+
+<div class="resumo">
+
+Em Sardes, Eleissan acorda vivo — mas em um corpo que não é regular. Força demais, 
+olhares desconfiados e o medo de se tornar um monstruoso: ele precisa aprender a dosar o que o mundo agora exige dele.
+
+</div>
+
+<a class="botao" href="capitulo8.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 9 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 9
+</div>
+
+<div class="titulo">
+Aquilo Que Não Foi Dito
+</div>
+
+<div class="resumo">
+
+Em Celeste, antes do amanhecer, Anemos sente que algo mudou. Diante de Sofhia,
+verdades começam a vir à tona — e o que não foi aqui pode afastar o que ambos ainda não sabem nomear.
+
+</div>
+
+<a class="botao" href="capitulo9.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 10 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 10
+</div>
+
+<div class="titulo">
+Harmonia no Limiar
+</div>
+
+<div class="resumo">
+
+Nas fronteiras de Celeste, uma presença implacável aparece em busca de Sofhia. 
+Sob pressão e escolha, Anemos e ela precisam lutar juntos — e o preço da harmonia pode ser alto demais.
+
+</div>
+
+<a class="botao" href="capitulo10.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 11 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 11
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo11.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 12 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 12
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo12.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 13 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 13
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo13.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 14 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 14
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo14.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 15 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 15
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo15.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 16 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 16
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo16.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 17 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 17
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo17.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 18 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 18
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo18.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 19 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 19
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo19.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+<!-- INICIO CAPITULO 20 ################################################################### -->
+
+<div class="card">
+
+<div class="capitulo">
+Capítulo 20
+</div>
+
+<div class="titulo">
+Quando a Ordem Sangra
+</div>
+
+<div class="resumo">
+
+Em Menfiz, a guerra se intensifica e a Ordem é posta à prova. 
+Enquanto Antares enfrentava a Tríade e THEWOS, a cidade sangra — e cada golpe pode fortalecer o inimigo.
+
+</div>
+
+<a class="botao" href="capitulo20.html">
+
+Ler Capítulo
+
+</a>
+
+</div>
+
+</div> <!-- fecha .grid -->
+
+</div> <!-- fecha .container -->
+
+<footer>
+The Gold Sextant
+</footer>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("btn-music");
+
+  audio.volume = 0.35;
+
+  btn.addEventListener("click", async () => {
+    try {
+      if (audio.paused) {
+        await audio.play();
+        btn.textContent = "🔇 Pausar";
+        btn.classList.add("playing");
+      } else {
+        audio.pause();
+        btn.textContent = "🔊 Música";
+        btn.classList.remove("playing");
+      }
+    } catch (e) {
+      alert("Não foi possível tocar a música. Verifique o caminho do arquivo MP3.");
+    }
+  });
+</script>
+
+</body>
+</html>
